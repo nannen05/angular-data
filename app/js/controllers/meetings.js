@@ -9,6 +9,8 @@ myApp.controller('MeetingsController' , ['$scope', '$rootScope', '$firebaseAuth'
  			var meetingsRef = new Firebase(FIREBASE_URL + 'users/' + $rootScope.currentUser.$id + '/meetings');
  			var meetingsInfo = $firebaseArray(meetingsRef);
 
+ 			$scope.meetings = meetingsInfo;
+
  			$scope.addMeeting = function() {
  				meetingsInfo.$add({
  					name: $scope.meetingname,
@@ -17,6 +19,11 @@ myApp.controller('MeetingsController' , ['$scope', '$rootScope', '$firebaseAuth'
  					$scope.meetingname = '';
  				}); // promise
  			} // addMeeting
+
+ 			$scope.deleteMeeting = function(key) {
+ 				meetingsInfo.$remove(key);
+ 			} // deletemeeting 
+ 			
  		} // User Authenticated
  	});// on Auth 
 
