@@ -4,20 +4,20 @@
     <h1>Add a Meeting</h1>
     <p>Type a meeting name and hit +</p>
   </div>
-  <form action="" class="formgroup addmeeting cf" name="myform" 
+  <form class="formgroup addmeeting cf" name="myform" 
   ng-submit="addMeeting()" 
   novalidate>
-  
+
 	<div class="inputwrapper">
 		
 		<input type="text" name="meetingname"
 		placeholder="Meeting Name"
 		ng-model="meetingname" ng-required="true">
 
-		<button type="submit" class="btn"
-		ng-disabled="myform.$invalid">+</button>
-
 	</div>
+
+	<button type="submit" class="btn"
+	ng-disabled="myform.$invalid">+</button>
 
 </form>
 </div><!-- meetings cf -->
