@@ -1,0 +1,26 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nannen05/angular-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nannen05/angular-data/issues"
+  },
+  "homepage": "https://github.com/nannen05/angular-data#readme",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-connect": "^3.1.0",
+    "wiredep": "^3.0.0"
+  }
+}
