@@ -13,10 +13,12 @@ myApp.controller('MeetingsController' , ['$scope', '$rootScope', '$firebaseAuth'
 
  			meetingsInfo.$loaded().then(function(data) {
  				$rootScope.howManyMeetings = meetingsInfo.length;
+ 				//console.log('loaded');
  			});  // make sure meeting data is loaded
 
  			meetingsInfo.$watch(function(data) {
  				$rootScope.howManyMeetings = meetingsInfo.length;
+ 				//console.log('watch-loaded');
  			});  
 
  			$scope.addMeeting = function() {
