@@ -38,7 +38,7 @@ myApp.controller('CheckInsController' , ['$scope', '$rootScope', '$location', '$
  		$scope.pickRandom = function() {
  			var whichRecord = Math.round(Math.random() * (checkinsList.length - 1));
  			$scope.recordId = checkinsList.$keyAt(whichRecord);
- 		} //pick winner
+ 		}; //pick winner
 
  		$scope.showLove = function(myCheckin) {
  			myCheckin.show = !myCheckin.show;
@@ -49,5 +49,17 @@ myApp.controller('CheckInsController' , ['$scope', '$rootScope', '$location', '$
  				myCheckin.userState = 'expanded';
  			}
 
- 		}
+ 		}; // show gift
+
+ 		$scope.giveLove = function(myCheckin, myGift) {
+ 			var refLove = new Firebase( FIREBASE_URL + 'users/' + $scope.whichuser + '/meetings/' + $scope.whichmeeting + '/checkins/' + myCheckin.$id + '/awards' );
+ 			var checkinsArray = $firebaseArray(refLove);
+ 			
+ 			var myData = {
+ 				name : myGift,
+ 				date : Firebase.ServerValue.TIMESTAMP
+ 			}; //myData
+ 			checkinsArray.$add(myData);
+ 		};
+
  }]);
