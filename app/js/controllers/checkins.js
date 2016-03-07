@@ -62,4 +62,12 @@ myApp.controller('CheckInsController' , ['$scope', '$rootScope', '$location', '$
  			checkinsArray.$add(myData);
  		};
 
+ 		$scope.deleteLove = function(checkinID, award) {
+ 			 var refDel = new Firebase( FIREBASE_URL + 'users/' + $scope.whichuser + '/meetings/' + $scope.whichmeeting + '/checkins/' + checkinID + '/awards' );
+ 			 var record = $firebaseObject(refDel);
+
+ 			 record.$remove(award);
+
+ 		};
+
  }]);
